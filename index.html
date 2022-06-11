@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Atividade de PW </title>
+</head>
+<body>
+  <script type="text/javascript">
+
+//----------------------------------------------------------------------------------------------------//
+
+cores = ["Verde", "Amarelo", "Azul", "Branco"];//Criação e atribuição de valor na variável cores  
+function imprimir(item) { 
+    console.log(item);//Valor retornado: Verde Amarelo Azul Branco
+}
+cores.forEach(imprimir);//Imprimir todos os itens 
+
+//----------------------------------------------------------------------------------------------------//
+
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Criação e atribuição de valor na variável numeros 
+function tabuadaDe2(item) {
+    console.log(item*2);//Valor retornado: 0 2 4 6 8 10 12 14 16 18 20
+}
+numeros.forEach(tabuadaDe2);//Imprimir os multiplos de 2
+
+//----------------------------------------------------------------------------------------------------//
+
+numeros1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];////Criação e atribuição de valor na variável numeros1
+total = 0;
+function somar(item) { //Imprimir a soma de todos os números de 0 a 10
+    total += item;
+}
+numeros1.forEach(somar);
+console.log(total);//Valor retornado: 55
+
+//----------------------------------------------------------------------------------------------------//
+
+marcas = ["Fiat", "Chevrolet", "Ford", "Volkswagen"]//Criação e atribuição de valor na variável marcas
+marcasIniciadasComF = [];
+novoIndice = 0;
+function selecionarMarcas(item, indice) {//Imprimir as marcas que iniciam com f
+    if (marcas[indice].indexOf("F") == 0) {
+        marcasIniciadasComF[novoIndice] = marcas[indice];
+        novoIndice++;
+    }
+}
+marcas.forEach(selecionarMarcas);
+console.log(marcasIniciadasComF);//Array retornado: ["Fiat", "Ford"]
+
+//----------------------------------------------------------------------------------------------------//
+
+nomes = ["Alberto", "Alex", "Sandro", "Roberta"];//Criação e atribuição de valor na variável nomes
+function converterParaMaisculo(item, indice) {//Imprimir todos os valores com letras maisculas 
+    nomes[indice] = nomes[indice].toUpperCase();
+}
+nomes.forEach(converterParaMaisculo);
+console.log(nomes);//Array retornado: ["ALBERTO", "ALEX", "SANDRO", "ROBERTA"]
+
+//----------------------------------------------------------------------------------------------------//
+
+nomes1 = ["Alberto", "Alex", "Sandro", "Ana Roberta"];//Criação e atribuição de valor na variável nomes1
+tamanhoNome = 0;
+nome = "";
+function maiorNome(item, indice) {//Imprimir o valor com maior número de caracteres
+    if (nomes1[indice].length > tamanhoNome) {
+        nome = nomes1[indice];
+        tamanhoNome = nomes1[indice].length;
+    }
+}
+nomes.forEach(maiorNome);
+console.log(nome);//Valor retornado: Ana Roberta
+
+//----------------------------------------------------------------------------------------------------//
+
+var numeros2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Criação e atribuição de valor na variável numeros2
+var total = 0;
+function somar(item, indice) {//Imprimir todos os valores com o indice correspondente a soma de cada valor com os anteriores 
+    total += item;
+    console.log("[índice " + indice + "]= " + total + " -> ");
+}
+numeros2.forEach(somar);//Array retornado:
+//[índice 0]= 0 -> [índice 1]= 1 -> [índice 2]= 3 ->
+//[índice 3]= 6 -> [índice 4]= 10 -> [índice 5]= 15 ->
+//[índice 6]= 21 -> [índice 7]= 28 -> [índice 8]= 36 ->
+//[índice 9]= 45 -> [índice 10]= 55 ->
+
+//----------------------------------------------------------------------------------------------------//
+
+var numeros3 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Criação e atribuição de valor na variável numeros3
+var total = 0;
+var total = 0;
+function somar1(item, indice){//Imprimir todos os valores com soma dos elementos de cada posição com todas as posições anteriores.
+    total += item;
+    numeros3[indice] = total;
+}
+numeros3.forEach(somar1);
+console.log(numeros3);//Array retornado: [ 0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ].
+
+//----------------------------------------------------------------------------------------------------//
+
+var carros = [//Criação e atribuição de valor na variável carros 
+  { id: 1, modelo: 'Corsa', marca: 'Chevrolet', preco: 45000, createdAt: 1534506085621 },
+  { id: 2, modelo: 'Punto', marca: 'Fiat', preco: 120000, createdAt: 1534506085621 }
+]
+var total = 0
+for(var i = 0; i < carros.length; i++) {
+    total += carros[i].preco//Imprimir a soma dos dois carros
+}
+console.log(total);//Valor retornado: 165000
+
+for(const carro of carros) {//Usando For Of
+    total += carro.preco//Imprimir o dobro da soma dos dois carros 
+}
+console.log(total);//Valor retornado: 330000
+
+for(const i in carros) {//Usando For In
+    total += carros[i].preco//Imprimir o triplo da soma dos dois carros
+}
+console.log(total);//Valor retornado: 495000
+
+//----------------------------------------------------------------------------------------------------//
+
+const cores1 = [ 'Verde', 'Amarelo', 'Azul', 'Branco' ]//Criação e atribuição de valor na variável cores1
+for (const index in cores1) {//Imprimir todos os valores com sua respectiva posição
+  console.log(index, cores1[index])//Valor retornado: 0 Verde, 1 Amarelo, 2 Azul, 3 Branco  
+}
+
+//----------------------------------------------------------------------------------------------------//
+
+const pessoa = { //Criação e atribuição de valor na variável pessoa
+  nome: 'Bruno',
+  idade: 25
+}
+for (const index in pessoa) {//Imprimir a Variavel com seu dado correspondente
+  console.log(`${index} - ${pessoa[index]}`)//Valor retornado: nome - Bruno | idade - 25
+}
+
+//----------------------------------------------------------------------------------------------------//
+
+const produtos = [//Criação e atribuição de valor na variável produtos
+  { descricao: 'Resma Ofício', valor: 11.50, quantidade: 10 },
+  { descricao: 'Lapis preto', valor: 0.50, quantidade: 3 },
+  { descricao: 'Transferidor plastico', valor: 1.20, quantidade: 4 }
+]
+let total1 = 0  //Criação e atribuição de valor na variável total1. 
+for (const index in produtos) {//Imprimir o total da soma de cada valor multiplicado pela quantidade 
+  const { valor, quantidade } = produtos[index]
+  total1 += valor * quantidade
+}
+console.log(total1)//Valor retornado: 121.3
+
+//----------------------------------------------------------------------------------------------------//
+
+const numeros4 = [ 10, 11, 22, 23, 34, 45, 66, 17, 28, 93, 101 ]//Criação e atribuição de valor na variável numeros4
+for (const numero1 of numeros4) {//Imprimir todos os valores 
+  console.log(numero1)//Valor retornado: 10, 11, 22, 23, 34, 45, 66, 17, 28, 93, 101
+}
+
+//----------------------------------------------------------------------------------------------------//
+
+const carros1 = [//Criação e atribuição de valor na variável carros1
+  { id: 1, modelo: 'Corsa', marca: 'Chevrolet', preco: 18000 },
+  { id: 2, modelo: 'Punto', marca: 'Fiat', preco: 12000 },
+  { id: 3, modelo: 'Gol', marca: 'Volkswagen', preco: 14000 },
+  { id: 4, modelo: 'Saveiro', marca: 'Volkswagen', preco: 20000 },
+  { id: 5, modelo: 'Uno', marca: 'Fiat', preco: 12000 }
+]
+let total2 = 0
+for (const carro of carros1) {//Imprimir a soma dos preços de todos os carros 
+  total2 += carro.preco
+}
+const valorFinal = Number(total2).toLocaleString('pt-BR', {//Converter o número para o padrão monetário
+  style: 'currency',
+  currency: 'BRL'
+})
+console.log(valorFinal) //Valor retornado: R$ 76,000.00
+
+//----------------------------------------------------------------------------------------------------//
+
+const artigo = document.querySelectorAll('article > p')
+for (const paragrafo of artigo) {
+  paragrafo.classList.add("read")
+}
+//Utilizar o querySelectorAll para capturar todos os parágrafos de uma página HTML e em seguida utilizar o For Of para percorrer
+//cada item da lista adicionando a classe lida em cada um dos elementos.
+
+//----------------------------------------------------------------------------------------------------//
+
+  </script>
+</body>
+</html>
+
+Willy Fernandes | 2° Informática | 11/06/2022
